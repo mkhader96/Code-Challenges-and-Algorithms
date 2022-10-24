@@ -1,1 +1,0 @@
-![WhiteBoard](/python/assets/Code%20Challenge%20Whiteboard.jpg)
