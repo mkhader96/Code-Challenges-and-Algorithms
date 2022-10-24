@@ -1,32 +1,28 @@
 import pytest
-from challenge01 import deleteNodefromlist
+from challenge01 import *
 
-def test_one():
-    actual = deleteNodefromlist([4,5,1,9], 1)
-    expected = [4,5,9]
-    assert actual == expected
 
-def test_two():
-    actual = deleteNodefromlist([4,5,1,9], 5)
+def test_delete_5():
+    llist = LinkedList()
+    node1 = Node(4)
+    node2 = Node(5)
+    node3 = Node(1)
+    node4 = Node(9)
+    llist.append(node1)
+    llist.append(node2)
+    llist.append(node3)
+    llist.append(node4)
+    deleteNode(node2)
+
     expected = [4,1,9]
+    actual = llist.printAll()
     assert actual == expected
 
-def test_three():
-    actual = deleteNodefromlist([4,5,1,9], 4)
-    expected = [5,1,9]
-    assert actual == expected
-def test_three():
-    actual = deleteNodefromlist(['A','B','C','D'], 'C')
-    expected = ['A','B','D']
-    assert actual == expected
 
-def test_four():
-    actual = deleteNodefromlist(['A','B','C','D'], 'A')
-    expected = ['B','C','D']
-    assert actual == expected
+def test_empty():
+    llist = LinkedList()
 
-def test_five():
-    actual = deleteNodefromlist(['A','B','C','D'], 'B')
-    expected = ['A','C','D']
-    assert actual == expected
+    expected = "The linked list is empty"
+    actual = llist.printAll()
 
+    assert actual ==expected
