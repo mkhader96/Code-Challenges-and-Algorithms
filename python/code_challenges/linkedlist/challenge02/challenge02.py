@@ -29,21 +29,14 @@ class LinkedList:
 
     def middleNode(self):
         '''A function to find the middle node in the linked list'''
-        pointer = self.head
-        mid_node = self.head
-        while ( pointer ) :
-            if pointer.next != None :
-                pointer = pointer.next.next
-                mid_node = mid_node.next
-            else : break
-        return mid_node.val
+        slow = self.head
+        fast = self.head
+        
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            
+        return slow.val
 
-def findMiddleNode(list):
-    '''A function to take a list as input and return the middle node'''
-    ll = LinkedList()
-    for i in list:
-        ll.append(Node(i))
-    ll.printAll()
-    return (ll.middleNode())
 
 
