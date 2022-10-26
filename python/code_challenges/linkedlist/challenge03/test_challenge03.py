@@ -42,3 +42,10 @@ def test_removeNth3():
     actual = ll.printAll()
     expected = ['A','B','C','D','E','F','G']
     assert actual == expected
+
+def test_removeNth3():
+    ll = createLinkedList([1,2])  
+    ll.removeNthFromEnd(1)
+    actual = ll.printAll()
+    expected = [1]
+    assert actual == expected
