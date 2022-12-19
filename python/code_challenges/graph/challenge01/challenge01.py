@@ -15,11 +15,13 @@ class Graph:
         self.adj_list = {}
 
     def add_node(self,value):
+        '''A function that creates a new graph node'''
         new_vertex = Node(value)
         self.adj_list[new_vertex] = []
         return new_vertex
 
     def add_edge(self,node1,node2,weight=0):
+        '''A function that creates a new graph edge'''
         
         if not node1 in self.adj_list.keys():
             return("this node does not exist")
@@ -34,6 +36,8 @@ class Graph:
         self.adj_list[node2].append(edge2)
 
     def breadth_first_traversal(self, input_value):
+
+        '''A function that takes in a value, the function traverses  the graph using breadth first traversal starting from the input value'''
         visited = []
         queue = [input_value]
         while queue:
